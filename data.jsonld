@@ -1,0 +1,35 @@
+{
+	"@context": {
+		"opn": "https://w3id.org/OPN#",
+		"schema": "http://schema.org/",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"opn:profile": { "@type": "@id" },
+		"opn:time": { "@type": "xsd:dateTime" },
+		"opn:key": { "@type": "xsd:hexBinary" },
+		"opn:controllerID": { "@type": "@id" },
+		"opn:notice": { "@type": "@id" },
+		"opn:policy": { "@type": "@id" },
+		"opn:primaryJustificationReceipt": { "@type": "@id" }
+	},
+	"@id": "http://example.com/receipts/2",
+	"@type": "opn:NoticeReceipt",
+	"opn:profile": "http://example.com/profiles/X",
+	"opn:id": "cc7b97a9-8999-412c-9f41-3cdc84a35f73",
+	"opn:time": "2019-05-10T00:00:00",
+	"opn:key": "6C46B7C2D42A76AB134F2D4EA4D4977B2F7FAB03B0707A768E99803B39EB227E",
+	"opn:language": "EN",
+	"opn:controller": {
+		"@type": "opn:Controller",
+		"opn:controllerID": "http://example.com/org/X",
+		"opn:controllerContact": { 
+			"@type": "schema:ContactPoint",
+			"schema:telephone": "(111) 1234 5678"
+		}
+	},
+	"opn:notice": "http://example.com/notices/A",
+	"opn:policy": "http://example.com/org/X/privacy-policy-201905",
+	"opn:context": { "schema:url": "http://example.com/org/X/website" },
+	"justification": "consent",
+	"primaryJustification": "legitimate-interest",
+	"primaryJustificationReceipt": "http://example.com/receipts/1"
+}

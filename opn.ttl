@@ -1,0 +1,97 @@
+@base <https://w3id.org/OPN> .
+@prefix :  <https://w3id.org/OPN#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+:NoticeReceipt a rdfs:Class ;
+    rdfs:label "Notice Receipt" ;
+    rdfs:comment "The class of all notice receipts" .
+
+:profile a rdfs:Property ;
+    rdfs:label "profile" ;
+    rdfs:description: "OPN privacy profile of the Controller" ;
+    rdfs:domain :Controller ;
+    rdfs:range xsd:anyURI .
+
+:id a rdfs:Property ;
+    rdfs:label "id" ;
+    rdfs:description: "Identifier for the notice receipt" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
+
+:time a rdfs:Property ;
+    rdfs:label "time" ;
+    rdfs:description: "timestamp of the generation or provision of receipt" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
+
+:key a rdfs:Property ;
+    rdfs:label "key" ;
+    rdfs:description: "verification key" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
+
+:language a rdfs:Property ;
+    rdfs:label "language" ;
+    rdfs:description: "lang" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
+
+:Controller a rdfs:Class ;
+    rdfs:label "Controller" ;
+    rdfs:description "A Controller (GDPR definition) or Provider" .
+
+:controllerID a rdfs:Property ;
+    rdfs:label "controller ID" ;
+    rdfs:description: "Identity of the Controller" ;
+    rdfs:domain :Controller ;
+    rdfs:range rdfs:Resource .
+
+:controllerContact a rdfs:Property ;
+    rdfs:label "controller contact" ;
+    rdfs:description: "Contact of the Controller" ;
+    rdfs:domain :Controller ;
+    rdfs:range rdfs:Resource .
+
+:controller a rdfs:Property ;
+    rdfs:label "controller" ;
+    rdfs:description "Controller associated with notice" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range :Controller .
+
+:notice a rdfs:Property ;
+    rdfs:label "notice" ;
+    rdfs:description: "Link to the notice this receipt is about" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range xsd:anyURI .
+
+:policy a rdfs:Property ;
+    rdfs:label "policy" ;
+    rdfs:description: "Link to the policy associated with the notice" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range xsd:anyURI .
+
+:context a rdfs:Property ;
+    rdfs:label "context" ;
+    rdfs:description: "Context of the notice e.g. website it was given at" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
+
+:justification a rdfs:Property ;
+    rdfs:label "justification" ;
+    rdfs:description: "Justification of the notice e.g. legal basis or requirements" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
+
+:primaryJustification a rdfs:Property ;
+    rdfs:label "primary justification" ;
+    rdfs:description: "Primary or main justification of the notice" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
+
+:primaryJustificationReceipt a rdfs:Property ;
+    rdfs:label "primary justification receipt" ;
+    rdfs:description: "Notice Receipt of agreement for primary justification" ;
+    rdfs:domain :NoticeReceipt ;
+    rdfs:range rdfs:Resource .
